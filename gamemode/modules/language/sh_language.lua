@@ -32,8 +32,8 @@ function DarkRP.addPhrase(lang, name, phrase)
 end
 
 function DarkRP.getPhrase(name, ...)
+    if not isnumber(name) then return end 
     local langTable = rp_languages[selectedLanguage] or rp_languages.en
-
     return (langTable[name] or rp_languages.en[name]) and string.format(langTable[name] or rp_languages.en[name], ...) or nil
 end
 
